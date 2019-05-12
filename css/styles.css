@@ -1,0 +1,31 @@
+body {
+  background-color: #eeeeee;
+background-image: url("/img/tileable-wood.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+
+nav {
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+
+li a {
+  
+  font-weight: bold;
+  
+}
+
+.carousel {
+  height: 800px !important;
+}
+
+.carousel .carousel-item{
+  width: 600px !important;
+  height: 600px !important;
+}
+
+.carousel .carousel-item img{
+  border-radius: 50%;
+}
+
