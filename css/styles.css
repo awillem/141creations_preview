@@ -7,7 +7,7 @@ background-image: url("/img/tileable-wood.png");
 
 nav {
   padding-top: 50px;
-  margin-bottom: 100px;
+  /* margin-bottom: 50px; */
 }
 
 li a {
@@ -16,7 +16,8 @@ li a {
   
 }
 
-.carousel {
+@media screen and (min-width: 601px) {
+.carousel  {
   height: 800px !important;
 }
 
@@ -24,8 +25,9 @@ li a {
   width: 600px !important;
   height: 600px !important;
 }
-
-.carousel .carousel-item img{
-  border-radius: 50%;
 }
+
+/* .carousel .carousel-item img{
+  border-radius: 50%;
+} */
 
