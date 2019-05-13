@@ -2,8 +2,14 @@ body {
   background-color: #eeeeee;
 background-image: url("/img/tileable-wood.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+display: flex;
+min-height: 100vh;
+flex-direction: column;
 }
 
+main {
+  flex: 1 0 auto;
+}
 
 nav {
   padding-top: 50px;
@@ -14,6 +20,10 @@ li a {
   
   font-weight: bold;
   
+}
+
+.page-footer .fab {
+  padding: 5px;
 }
 
 @media screen and (min-width: 601px) {
