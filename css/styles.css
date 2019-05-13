@@ -17,14 +17,25 @@ li a {
 }
 
 @media screen and (min-width: 601px) {
-.carousel  {
-  height: 800px !important;
+  .carousel  {
+    height: 600px !important;
+  }
+
+  .carousel .carousel-item{
+    width: 400px !important;
+    height: 400px !important;
+  }
 }
 
-.carousel .carousel-item{
-  width: 600px !important;
-  height: 600px !important;
-}
+@media screen and (min-width: 993px) {
+  .carousel  {
+    height: 800px !important;
+  }
+
+  .carousel .carousel-item{
+    width: 600px !important;
+    height: 600px !important;
+  }
 }
 
 /* .carousel .carousel-item img{
