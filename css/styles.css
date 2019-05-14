@@ -1,3 +1,4 @@
+
 body {
   background-color: #eeeeee;
 background-image: url("/img/tileable-wood.png");
@@ -17,18 +18,55 @@ nav {
   /* margin-bottom: 50px; */
 }
 
-li a {
+.btn:hover {
+  
+  background-color:#009688 !important;
+  
+}
+
+
+/* li a {
   
   font-weight: bold;
   
-}
+} */
 
 .page-footer .fab {
   padding: 5px;
 }
 
+.carousel .carousel-item img{
+  border-radius: 1%;
+}
+
+
+.indicator-item {
+  background-color: teal !important;
+  height: 12px !important;
+  width: 12px !important;
+}
+
+.indicator-item.active {
+  background-color: #424242 !important ;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 600px) {
+  .carousel  {
+    margin-top: 30px !important;
+  }
+  .indicator-item {
+    height: 10px !important;
+    width: 10px !important;
+  }
+
+  
+}
+
 @media screen and (min-width: 601px) {
   .carousel  {
+    margin-top: 30px;
     height: 600px !important;
   }
 
@@ -40,6 +78,7 @@ li a {
 
 @media screen and (min-width: 993px) {
   .carousel  {
+    margin-top: 20px;
     height: 800px !important;
   }
 
@@ -49,7 +88,4 @@ li a {
   }
 }
 
-.carousel .carousel-item img{
-  border-radius: 1%;
-}
 
