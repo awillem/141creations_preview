@@ -24,6 +24,23 @@ nav {
   
 }
 
+.sidenav {
+  width: 200px;
+}
+
+li div a {
+  margin-left: 40px;
+}
+
+/* .user-view {
+  height: 100px;
+  
+}
+.user-view img {
+  width: 100px;
+  height: 100px;
+} */
+
 
 /* li a {
   
@@ -77,6 +94,15 @@ nav {
 }
 
 @media screen and (min-width: 993px) {
+  .sidenav-trigger {
+    display: none;
+  }
+
+  /* nav {
+    display: none;
+    height: 10px;
+  } */
+
   .carousel  {
     margin-top: 20px;
     height: 800px !important;
