@@ -53,6 +53,8 @@ li div a {
   
 } */
 
+
+
 .page-footer .fab {
   padding: 5px;
 }
@@ -87,10 +89,15 @@ li div a {
 }
 
 @media screen and (min-width: 601px) {
+  /* .nav-wrapper img {
+    width: 70%;
+  } */
+  
   .carousel  {
     margin-top: 30px;
     height: 600px !important;
   }
+
 
   .carousel .carousel-item{
     width: 400px !important;
@@ -98,9 +105,13 @@ li div a {
   }
 }
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 992px) {
   .sidenav-trigger {
     display: none;
+  }
+
+  .nav-wrapper img {
+    width: 70%;
   }
 
   /* nav {
@@ -116,6 +127,12 @@ li div a {
   .carousel .carousel-item{
     width: 600px !important;
     height: 600px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-wrapper img {
+    width: 100%;
   }
 }
 
