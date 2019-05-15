@@ -14,10 +14,14 @@ main {
   margin-top: 50px;
 }
 
-nav {
-  /* padding-top: 50px; */
-  /* margin-bottom: 50px; */
+
+.sidenav-trigger {
+  margin: 15px 0 15px 15px;
 }
+/* nav {
+  padding-top: 50px;
+  margin-bottom: 50px;
+} */
 
 .btn:hover {
   
