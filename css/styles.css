@@ -119,6 +119,14 @@ li div a {
     height: 10px;
   } */
 
+  #one, #two {
+    width: 250px;
+    border: black 7px solid;
+    border-radius: 50%;
+  }
+
+  
+
   .carousel  {
     margin-top: 20px;
     height: 800px !important;
