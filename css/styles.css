@@ -53,7 +53,9 @@ li div a {
   
 } */
 
-
+.collection-item span:first-child {
+  font-weight: bold;
+}
 
 .page-footer .fab {
   padding: 5px;
@@ -74,39 +76,21 @@ li div a {
   background-color: #424242 !important ;
 }
 
-.modal {
 
-  width: 30vw !important;
-  height: 50vw !important;
-}
-.modal img {
-  width: 100% !important;
-  height: 100% !important;
-  margin-top: 5px;
-  }
-  
-  /* .arrow {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    background-color: blue;
-  } */
 
   
 
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 600px) {
-  .carousel  {
+  /* .carousel main {
     margin-top: 30px !important;
-  }
+  } */
   .indicator-item {
     height: 10px !important;
     width: 10px !important;
   }
-  .modal {
-    width: 65vw !important;
-    height: 75vw !important;
-  }
+  
   
 }
 
@@ -115,15 +99,24 @@ li div a {
     width: 70%;
   } */
   
-  .carousel  {
-    margin-top: 30px;
+  .carousel.main {
+    /* margin-top: 30px; */
     height: 600px !important;
   }
 
 
-  .carousel .carousel-item{
+  .carousel .carousel-item.main{
     width: 400px !important;
     height: 400px !important;
+  }
+
+  .modal .carousel {
+    height: 400px;
+  }
+
+  .modal .carousel-item {
+    width: 200px;
+    height: 200px
   }
 }
 
@@ -149,14 +142,23 @@ li div a {
 
   
 
-  .carousel  {
+  .carousel.main  {
     margin-top: 20px;
     height: 800px !important;
   }
 
-  .carousel .carousel-item{
+  .carousel .carousel-item.main{
     width: 600px !important;
     height: 600px !important;
+  }
+
+  .modal .carousel {
+    height: 600px;
+  }
+
+  .modal .carousel-item {
+    width: 400px;
+    height: 400px
   }
 }
 
