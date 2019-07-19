@@ -14,6 +14,9 @@ main {
   margin-top: 50px;
 }
 
+.pagination li.active {
+  background-color: #00695c;
+}
 
 .sidenav-trigger {
   margin: 15px 0 15px 15px;
