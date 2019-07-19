@@ -106,7 +106,8 @@ paginationUL.addEventListener('click', e => {
         }
       }
     } else if (e.target.innerText === 'chevron_right') {
-      if (active < pageLinks[pageLinks.length - 1].childNodes[0].innerText) {
+      console.log(pageLinks[pageLinks.length - 1].childNodes[0].innerText)
+      if (active < pageLinks[pageLinks.length - 2].childNodes[0].innerText) {
         clearActive();
         let newPage = (parseInt(active) + 1).toString()
         for (let i = 0; i < pageLinks.length; i++) {
