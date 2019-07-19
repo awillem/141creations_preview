@@ -65,6 +65,8 @@ function pageLinks(list, displayQty) {
     //showPage(list, 0);
   } else {
     let pages = Math.ceil(list.length / displayQty);
+    let left = `<li><a href="#!"><i class="material-icons">chevron_left</i></a></li>`;
+    paginationUL.innerHTML = left;
     for (let i = 1; i <= pages; i++) {
       let li = document.createElement('li');
       if (i === 1) {
@@ -75,6 +77,8 @@ function pageLinks(list, displayQty) {
       li.append(a);
       paginationUL.append(li);
     }
+    let right = `<li><a href="#!"><i class="material-icons">chevron_right</i></a></li>`;
+    paginationUL.innerHTML += right;
   }
   showPage(list, 1, displayQty);
 }
@@ -83,17 +87,47 @@ pageLinks(currentList, displayQty);
 
 
 paginationUL.addEventListener('click', e => {
-  console.log(e.target.innerText);
   if (e.target.tagName === 'A') {
-    let links = document.querySelectorAll('.pagination li');
-    console.log(links)
-    links.forEach(link => {
-      link.classList.remove('active');
-    });
+    clearActive();
     e.target.parentNode.classList.add('active');
     showPage(currentList, e.target.innerText, displayQty)
+  } else if (e.target.tagName === "I") {
+    let active = document.querySelector('li.active').innerText;
+    let pageLinks = document.getElementsByClassName('pagination')[0].childNodes;
+    if (e.target.innerText === 'chevron_left') {
+      if (active !== "1") {
+        clearActive();
+        let newPage = (parseInt(active) - 1).toString();
+        for (let i = 0; i < pageLinks.length; i++) {
+          if (pageLinks[i].childNodes[0].innerText === newPage) {
+            pageLinks[i].classList.add('active');
+            showPage(currentList, newPage, displayQty)
+          }
+        }
+      }
+    } else if (e.target.innerText === 'chevron_right') {
+      if (active < pageLinks[pageLinks.length - 1].childNodes[0].innerText) {
+        clearActive();
+        let newPage = (parseInt(active) + 1).toString()
+        for (let i = 0; i < pageLinks.length; i++) {
+          if (pageLinks[i].childNodes[0].innerText === newPage) {
+            pageLinks[i].classList.add('active');
+            showPage(currentList, newPage, displayQty)
+          }
+        }
+
+      }
+    }
   }
+
 })
+
+function clearActive() {
+  let links = document.querySelectorAll('.pagination li');
+  links.forEach(link => {
+    link.classList.remove('active');
+  });
+}
 
 
 
