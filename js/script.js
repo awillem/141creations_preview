@@ -1,7 +1,8 @@
 
 const paginationUL = document.querySelector('ul.pagination');
 const cardContainer = document.querySelector('main div.container');
-let displayQty = 4;
+let displayQty = 8;
+const displayQtyForm = document.getElementById('displayQty');
 let currentList = products;
 console.log(currentList);
 
@@ -172,3 +173,32 @@ function productHtml(product, index) {
   `;
   return html;
 }
+
+function appendDisplayQty() {
+  let html = `
+  <form>
+      <div class="row display">
+        <div class="container">
+          <div class="input-field col s2 offset-s5">
+            <select class="center">
+              <option value="4">4</option>
+              <option value="8" class="center-align" selected>8</option>
+              <option value="12">12</option>
+              <option value="20">20</option>
+            </select>
+            <label class="teal-text display">Display Quantity:</label>
+          </div>
+        </div>
+      </div>
+    </form>
+  `;
+  displayQtyForm.innerHTML = html;
+}
+
+appendDisplayQty()
+
+displayQtyForm.addEventListener('change', e => {
+  console.log(e.target.value);
+  displayQty = e.target.value;
+  pageLinks(currentList, displayQty)
+})

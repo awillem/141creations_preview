@@ -40,6 +40,22 @@ li div a {
   margin-left: 40px;
 }
 
+ label {
+  font-size: 1.3rem !important;
+}
+
+.select-wrapper li.selected, .select-wrapper li {
+  text-align: center !important;
+  
+}
+
+.select-dropdown {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px !important;
+}
+
+
 /* .user-view {
   height: 100px;
   
