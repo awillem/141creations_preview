@@ -109,7 +109,15 @@ li div a {
     height: 10px !important;
     width: 10px !important;
   }
-  
+  .select-dropdown {
+    margin-top: 35px !important;
+    font-weight: normal;
+    
+  }
+
+  .select-wrapper {
+    width: 20vw !important;
+  }
   
 }
 
@@ -136,6 +144,9 @@ li div a {
   .modal .carousel-item {
     width: 200px;
     height: 200px
+  }
+  .select-dropdown {
+    margin-top: 35px !important;
   }
 }
 
