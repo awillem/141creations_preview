@@ -87,7 +87,8 @@ pageLinks(currentList, displayQty);
 
 
 paginationUL.addEventListener('click', e => {
-  if (e.target.tagName === 'A') {
+  console.log(e.target.firstChild.tagName !== "I")
+  if (e.target.tagName === 'A' && e.target.firstChild.tagName !== "I") {
     clearActive();
     e.target.parentNode.classList.add('active');
     showPage(currentList, e.target.innerText, displayQty)
@@ -106,7 +107,6 @@ paginationUL.addEventListener('click', e => {
         }
       }
     } else if (e.target.innerText === 'chevron_right') {
-      console.log(pageLinks[pageLinks.length - 1].childNodes[0].innerText)
       if (active < pageLinks[pageLinks.length - 2].childNodes[0].innerText) {
         clearActive();
         let newPage = (parseInt(active) + 1).toString()
@@ -140,7 +140,7 @@ function clearActive() {
 function productHtml(product, index) {
   // console.log(product);
   let html = `
-  <div class="col s12 m4 l3">
+  <div class="col s12 m6 l3">
   <div class="card hoverable">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="${product.images[0]}">

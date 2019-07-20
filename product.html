@@ -248,7 +248,7 @@
       <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
       <!-- Modal Structure -->
-      <div id="modal1" class="modal">
+      <!-- <div id="modal1" class="modal">
         <div class="carousel">
           <a class="carousel-item" href="#one!"><img src="img/Pen Images/pen_1.jpeg"></a>
           <a class="carousel-item" href="#two!"><img src="img/Pen Images/pen_2.jpeg"></a>
@@ -302,15 +302,29 @@
           <a class="carousel-item" href="#two!"><img src="img/Pen Images/pen_1.jpeg"></a>
           <a class="carousel-item" href="#three!"><img src="img/Pen Images/pen_2.jpeg"></a>
         </div>
-      </div>
+      </div> -->
 
-    </div> -->
+    </div>
     <div class="row">
       <div class="container">
         <ul class="pagination center">
           <!-- <li class="active"><a href="#!">1</a></li>
-              <li><a href="#!">2</a></li> -->
+                <li><a href="#!">2</a></li> -->
         </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container">
+        <div class="input-field col s3 center">
+          <select>
+            <option value="" selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+          <label>QTY DISPLAYED</label>
+        </div>
       </div>
     </div>
     </div>
@@ -388,6 +402,10 @@
           var instances = M.Carousel.init(elems);
           instances[0].set(2);
         }
+      });
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, options);
       });
 
     });
