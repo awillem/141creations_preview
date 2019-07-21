@@ -7,7 +7,8 @@ let products = [
     kitColor: 'pewter',
     images: ['img/Pen Images/pen_1.jpeg', 'img/Pen Images/pen_2.jpeg', 'img/Pen Images/pen_3.jpeg'],
     available: true,
-    created: "1/18/19"
+    created: "1/18/19",
+    price: "$10"
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ let products = [
     kitColor: 'silver',
     images: ['img/Pen Images/pen_2.jpeg', 'img/Pen Images/pen_3.jpeg', 'img/Pen Images/pen_4.jpeg'],
     available: true,
-    created: "12/18/18"
+    created: "12/18/18",
+    price: "$10"
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ let products = [
     kitColor: 'pewter',
     images: ['img/Pen Images/pen_3.jpeg', 'img/Pen Images/pen_4.jpeg', 'img/Pen Images/pen_5.jpeg'],
     available: true,
-    created: "2/18/19"
+    created: "2/18/19",
+    price: "$10"
   },
   {
     id: 4,
@@ -37,7 +40,8 @@ let products = [
     kitColor: 'gunmetal',
     images: ['img/Pen Images/pen_4.jpeg', 'img/Pen Images/pen_5.jpeg', 'img/Pen Images/pen_6.jpeg'],
     available: true,
-    created: "4/18/19"
+    created: "4/18/19",
+    price: "$10"
   },
   {
     id: 5,
@@ -47,7 +51,8 @@ let products = [
     kitColor: 'silver',
     images: ['img/Pen Images/pen_5.jpeg', 'img/Pen Images/pen_6.jpeg', 'img/Pen Images/pen_7.jpeg'],
     available: true,
-    created: "5/18/19"
+    created: "5/18/19",
+    price: "$10"
   },
   {
     id: 6,
@@ -57,7 +62,8 @@ let products = [
     kitColor: 'gunmetal',
     images: ['img/Pen Images/pen_6.jpeg', 'img/Pen Images/pen_7.jpeg', 'img/Pen Images/pen_1.jpeg'],
     available: false,
-    created: "6/18/19"
+    created: "6/18/19",
+    price: "$10"
   },
   {
     id: 7,
@@ -67,6 +73,7 @@ let products = [
     kitColor: 'silver',
     images: ['img/Pen Images/pen_7.jpeg', 'img/Pen Images/pen_1.jpeg', 'img/Pen Images/pen_2.jpeg'],
     available: true,
-    created: "5/13/19"
+    created: "5/13/19",
+    price: "$10"
   }
 ]

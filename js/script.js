@@ -6,6 +6,7 @@ const cardContainer = document.querySelector('main div.container');
 let displayQty = 8;
 const displayQtyForm = document.getElementById('displayQty');
 let currentList = products;
+const filterDiv = document.getElementById('filterDiv');
 console.log(currentList);
 
 function showPage(list, page, displayQty) {
@@ -161,6 +162,7 @@ function productHtml(product, index) {
         <li class="collection-item"><span>Material: </span><span>${product.material}</span></li>
         <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</span></li>
         <li class="collection-item"><span>Kit Metal Color: </span><span>${product.kitColor}</span></li>
+        <li class="collection-item"><span>Price: </span><span>${product.price}</span></li>
       </ul>
     </div>
   </div>
@@ -281,10 +283,10 @@ window.onload = function () {
       if (i === 1) {
         if (item.checked) {
           searchTerm.available.push(true);
-        } else if (i === 2) {
-          if (item.checked) {
-            searchTerm.available.push(false);
-          }
+        }
+      } else if (i === 2) {
+        if (item.checked) {
+          searchTerm.available.push(false);
         }
       }
     });
@@ -331,18 +333,12 @@ window.onload = function () {
     let newList = [];
     productList.forEach(product => {
       let flag = [];
-      // let available = createConditional(searchTerm.available, "available")
-      // if (available) {
-      //   console.log("yes");
-      // } else {
-      //   console.log("no")
-      // }
-
       if (searchTerm.available.length > 0) {
         let availableFlag = false;
+        let i = 0
         searchTerm.available.forEach(term => {
           if (!availableFlag) {
-            if (product.available == term) {
+            if (product.available === term) {
               availableFlag = true;
             }
           }
@@ -398,111 +394,121 @@ window.onload = function () {
         });
         flag.push(kitColorFlag);
       }
-      console.log(flag.includes(false));
+      // console.log(flag.includes(false));
       if (!flag.includes(false)) {
         newList.push(product);
       }
     });
-    console.log(newList)
+    currentList = newList;
+    pageLinks(currentList, displayQty);
   }
+
+  console.log("test:", checkboxes[2].checked)
+  clear.addEventListener('click', e => {
+    // location.reload();
+    console.log(checkboxes[1].checked)
+    checkboxes.forEach(box => {
+      if (box.checked) {
+        box.click()
+      }
+    })
+    currentList = products;
+    pageLinks(currentList, displayQty);
+  })
+
+
+
+  function createFilters() {
+    let html = `
+    <div class="row">
+    <a class="btn" id="filter">Filter</a>
+    <div id="filterbuttons" class="right">
+      <a class="btn" id="clear">Clear Filter</a>
+      <a class="btn" id="apply">Apply</a>
+    </div>
+  </div>
+  <div id="filters">
+    <div class="row">
+      <div class="input-field col s12 m4">
+        <select multiple>
+          <option value="" disabled>Available:</option>
+          <option value="true" class="available">Yes</option>
+          <option value="false" class="available">No</option>
+        </select>
+      </div>
+      <div class="input-field col s12 m4">
+        <select multiple>
+          <option value="" disabled>Type:</option>
+          <option value="pen" class="type">Pen</option>
+          <option value="bottle opener" class="type">Bottle Opener</option>
+        </select>
+      </div>
+      <div class="input-field col s12 m4">
+        <select multiple>
+          <option value="" disabled>Material:</option>
+          <option value="wood" class="material">Wood</option>
+          <option value="acrylic" class="material">Acrylic</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m4 offset-m2">
+        <select multiple>
+          <option value="" disabled>Kit Type:</option>
+          <option value="grenade" class="kitType">grenade</option>
+          <option value="clicker" class="kitType">clicker</option>
+          <option value="twist skull" class="kitType">twist skull</option>
+          <option value="twist" class="kitType">twist</option>
+          <option value="cap" class="kitType">cap</option>
+          <option value="spring cap" class="kitType">spring cap</option>
+        </select>
+      </div>
+      <div class="input-field col s12 m4">
+        <select multiple>
+          <option value="" disabled>Kit Color:</option>
+          <option value="pewter" class="kitColor">pewter</option>
+          <option value="silver" class="kitColor">silver</option>
+          <option value="gunmetal" class="kitColor">gunmetal</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  `;
+    filterDiv.innerHTML = html;
+  }
+
+  // createFilters();
+
+
+
+
+
 
   //takes in an array
-  function createConditional(terms, type) {
-    let newTerm = "";
-    if (terms.length > 0) {
-      terms.forEach((term, i) => {
-        if (i === 0) {
-          newTerm = `product.${type} == "${term}" `
-        } else {
-          newTerm += `|| product.${type} == "${term}" `
-        }
-      });
-    }
-    // console.log(newTerm);
-    return newTerm;
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // function search(productList, searchTerm) {
-  //   console.log(productList, searchTerm)
-  //   createConditionals(searchTerm);
-  //   productList.forEach(product => {
-
-  //   });
-  // }
-
-  // function createConditionals(searchTerm) {
-  //   let available = "";
-  //   let type = "";
-  //   let material = "";
-  //   let kitType = "";
-  //   let kitColor = ""
-  //   searchTerm.forEach(term => {
-  //     if (term.available) {
-  //       console.log(available.length)
-  //       if (available.length === 0) {
-  //         available = "product.available === term.available "
+  // function createConditional(terms, type) {
+  //   let newTerm = "";
+  //   if (terms.length > 0) {
+  //     terms.forEach((term, i) => {
+  //       if (i === 0) {
+  //         newTerm = `product.${type} == "${term}" `
   //       } else {
-  //         available += "|| product.avalable === term.available "
+  //         newTerm += `|| product.${type} == "${term}" `
   //       }
-  //     } else if (term.type) {
-  //       console.log('type')
-  //     } else if (term.material) {
-  //       console.log('material')
-  //     } else if (term.kitType) {
-  //       console.log('kitType')
-  //     } else if (term.kitColor) {
-  //       console.log('kitColor')
-  //     }
-  //   });
-  //   let term = "";
-  //   if (available) {
-  //     term += `(${available}) `;
+  //     });
   //   }
-  //   if (type) {
-  //     if (term.length > 0){
-  //       term += ` && `
-  //     }       
-  //     term += `(${type}) `;      
-  //   }
-  //   if (type) {
-  //     if (term.length > 0){
-  //       term += ` && `
-  //     }       
-  //     term += `(${type}) `;      
-  //   }
-  //   if (type) {
-  //     if (term.length > 0){
-  //       term += ` && `
-  //     }       
-  //     term += `(${type}) `;      
-  //   }
-  //   if (type) {
-  //     if (term.length > 0){
-  //       term += ` && `
-  //     }       
-  //     term += `(${type}) `;      
-  //   }
-
-
-  //   console.log(term);
+  //   // console.log(newTerm);
+  //   return newTerm;
   // }
+
+
+
+
+
+
+
+
+
+
 
 
 
