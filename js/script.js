@@ -406,78 +406,25 @@ window.onload = function () {
   console.log("test:", checkboxes[2].checked)
   clear.addEventListener('click', e => {
     // location.reload();
-    console.log(checkboxes[1].checked)
+    // console.log(checkboxes[1].checked)
     checkboxes.forEach(box => {
+      console.log(box.checked)
       if (box.checked) {
         box.click()
+        box.checked = false;
       }
+      // console.log("after click", checkboxes.checked)
+      // box.setAttribute("checked", false);
+      // console.log("after change", checkboxes.checked)
     })
+    console.log(checkboxes);
     currentList = products;
     pageLinks(currentList, displayQty);
   })
 
 
 
-  function createFilters() {
-    let html = `
-    <div class="row">
-    <a class="btn" id="filter">Filter</a>
-    <div id="filterbuttons" class="right">
-      <a class="btn" id="clear">Clear Filter</a>
-      <a class="btn" id="apply">Apply</a>
-    </div>
-  </div>
-  <div id="filters">
-    <div class="row">
-      <div class="input-field col s12 m4">
-        <select multiple>
-          <option value="" disabled>Available:</option>
-          <option value="true" class="available">Yes</option>
-          <option value="false" class="available">No</option>
-        </select>
-      </div>
-      <div class="input-field col s12 m4">
-        <select multiple>
-          <option value="" disabled>Type:</option>
-          <option value="pen" class="type">Pen</option>
-          <option value="bottle opener" class="type">Bottle Opener</option>
-        </select>
-      </div>
-      <div class="input-field col s12 m4">
-        <select multiple>
-          <option value="" disabled>Material:</option>
-          <option value="wood" class="material">Wood</option>
-          <option value="acrylic" class="material">Acrylic</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12 m4 offset-m2">
-        <select multiple>
-          <option value="" disabled>Kit Type:</option>
-          <option value="grenade" class="kitType">grenade</option>
-          <option value="clicker" class="kitType">clicker</option>
-          <option value="twist skull" class="kitType">twist skull</option>
-          <option value="twist" class="kitType">twist</option>
-          <option value="cap" class="kitType">cap</option>
-          <option value="spring cap" class="kitType">spring cap</option>
-        </select>
-      </div>
-      <div class="input-field col s12 m4">
-        <select multiple>
-          <option value="" disabled>Kit Color:</option>
-          <option value="pewter" class="kitColor">pewter</option>
-          <option value="silver" class="kitColor">silver</option>
-          <option value="gunmetal" class="kitColor">gunmetal</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  `;
-    filterDiv.innerHTML = html;
-  }
 
-  // createFilters();
 
 
 
