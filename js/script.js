@@ -1,4 +1,6 @@
 
+const productDiv = document.getElementById('products');
+console.log(productDiv)
 const paginationUL = document.querySelector('ul.pagination');
 const cardContainer = document.querySelector('main div.container');
 let displayQty = 8;
@@ -7,16 +9,17 @@ let currentList = products;
 console.log(currentList);
 
 function showPage(list, page, displayQty) {
+  let newList = dateOrder(list);
   let start;
   let end;
   if (page === 0) {
     start = 0;
-    end = list.length - 1;
+    end = newList.length - 1;
   } else {
     start = ((page * displayQty) - 1) - (displayQty - 1);
     end = (page * displayQty) - 1;
-    if (end >= list.length) {
-      end = list.length - 1;
+    if (end >= newList.length) {
+      end = newList.length - 1;
     }
   }
 
@@ -25,11 +28,11 @@ function showPage(list, page, displayQty) {
   let html = ``;
   let row = `<div class="row">`;
   for (let i = start; i <= end; i++) {
-    row += productHtml(list[i], i);
+    row += productHtml(newList[i], i);
 
     // console.log(i === 0, (i + 1) % 4 === 0, (i + 1) === list.length)
 
-    if ((i + 1) === list.length) {
+    if ((i + 1) === newList.length) {
       row += `</div>`;
       html += row;
     } else if (i === 0) {
@@ -41,7 +44,7 @@ function showPage(list, page, displayQty) {
     }
   }
   // console.log(html)
-  cardContainer.innerHTML = html;
+  productDiv.innerHTML = html;
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems, {
     'onOpenEnd': initCarouselModal
@@ -198,7 +201,317 @@ function appendDisplayQty() {
 appendDisplayQty()
 
 displayQtyForm.addEventListener('change', e => {
-  console.log(e.target.value);
+  console.log(e.target);
   displayQty = e.target.value;
   pageLinks(currentList, displayQty)
 })
+
+
+// filters products by availability, type, material, kitType, kitColor
+function filterProducts() {
+
+}
+
+// returns product array in order by date descending
+function dateOrder(array) {
+  array.sort(function (a, b) {
+    if (new Date(a.created) < new Date(b.created)) {
+      return -1;
+    }
+    if (new Date(a.created) > new Date(b.created)) {
+      return 1;
+    }
+
+    return 0;
+  })
+  return array
+}
+
+/**** FILTERS ****/
+
+let filterFlag = false;
+const selectFilters = document.getElementById('filters');
+const filter = document.getElementById('filter'); // opens and closes filter box
+const clear = document.getElementById('clear'); // clears filters
+const apply = document.getElementById('apply'); // applies filters
+const clearAndApply = document.getElementById('filterbuttons');
+selectFilters.style.display = "none";
+clearAndApply.style.display = "none";
+selectFilters.style.backgroundColor = '#ffffff90';
+selectFilters.style.border = "5px black solid";
+selectFilters.style.borderRadius = "10px";
+
+
+
+// changes the text of the filter on/off button from FILTER to X
+// Opens and close the Filter Selects.
+filter.addEventListener('click', e => {
+  filterFlag = filterFlag ? false : true;
+  if (!filterFlag) {
+    filter.innerText = "FILTER";
+    selectFilters.style.display = "none";
+    clearAndApply.style.display = "none";
+  } else {
+    filter.innerText = "X"
+    selectFilters.style.display = "block";
+    clearAndApply.style.display = "block";
+  }
+});
+window.onload = function () {
+  const eachFilter = document.getElementsByClassName('input-field');
+
+  const available = eachFilter[0].querySelectorAll('[type="checkbox"]');
+  const type = eachFilter[1].querySelectorAll('[type="checkbox"]');
+  const material = eachFilter[2].querySelectorAll('[type="checkbox"]');
+  const kitType = eachFilter[3].querySelectorAll('[type="checkbox"]');
+  const kitColor = eachFilter[4].querySelectorAll('[type="checkbox"]');
+  const checkboxes = document.querySelectorAll('[type="checkbox"]')
+
+
+
+  apply.addEventListener('click', () => {
+    let searchTerm = {
+      available: [],
+      type: [],
+      material: [],
+      kitType: [],
+      kitColor: [],
+    };
+    available.forEach((item, i) => {
+      if (i === 1) {
+        if (item.checked) {
+          searchTerm.available.push(true);
+        } else if (i === 2) {
+          if (item.checked) {
+            searchTerm.available.push(false);
+          }
+        }
+      }
+    });
+    type.forEach((item, i) => {
+      if (i > 0) {
+        if (item.checked) {
+          searchTerm.type.push(item.parentNode.innerText);
+        }
+      }
+    });
+    material.forEach((item, i) => {
+      if (i > 0) {
+        if (item.checked) {
+          searchTerm.material.push(item.parentNode.innerText);
+        }
+      }
+    });
+    kitType.forEach((item, i) => {
+      if (i > 0) {
+        if (item.checked) {
+          searchTerm.kitType.push(item.parentNode.innerText);
+        }
+      }
+    });
+    kitColor.forEach((item, i) => {
+      if (i > 0) {
+        if (item.checked) {
+          searchTerm.kitColor.push(item.parentNode.innerText);
+        }
+      }
+    });
+    // console.log("search:");
+    // console.log(searchTerm.available);
+    search(products, searchTerm)
+
+  });
+
+  // Uses the object searchTerm gotten form the apply click listener
+  // performs search through products array and sets currentList to it.  
+  // Then calls pageList()
+
+  function search(productList, searchTerm) {
+    // console.log(productList);
+    let newList = [];
+    productList.forEach(product => {
+      let flag = [];
+      // let available = createConditional(searchTerm.available, "available")
+      // if (available) {
+      //   console.log("yes");
+      // } else {
+      //   console.log("no")
+      // }
+
+      if (searchTerm.available.length > 0) {
+        let availableFlag = false;
+        searchTerm.available.forEach(term => {
+          if (!availableFlag) {
+            if (product.available == term) {
+              availableFlag = true;
+            }
+          }
+        });
+        flag.push(availableFlag)
+      }
+
+      if (searchTerm.type.length > 0) {
+        let typeFlag = false;
+        searchTerm.type.forEach(term => {
+          if (!typeFlag) {
+            // console.log(product.type == term.toLowerCase());
+            if (product.type == term.toLowerCase()) {
+              typeFlag = true;
+            }
+          }
+        });
+        flag.push(typeFlag);
+      }
+
+      if (searchTerm.material.length > 0) {
+        let materialFlag = false;
+        searchTerm.material.forEach(term => {
+          if (!materialFlag) {
+            if (product.material == term.toLowerCase()) {
+              materialFlag = true;
+            }
+          }
+        });
+        flag.push(materialFlag);
+      }
+
+      if (searchTerm.kitType.length > 0) {
+        let kitTypeFlag = false;
+        searchTerm.kitType.forEach(term => {
+          if (!kitTypeFlag) {
+            if (product.kitType == term) {
+              kitTypeFlag = true;
+            }
+          }
+        });
+        flag.push(kitTypeFlag);
+      }
+
+      if (searchTerm.kitColor.length > 0) {
+        let kitColorFlag = false;
+        searchTerm.kitColor.forEach(term => {
+          if (!kitColorFlag) {
+            if (product.kitColor == term.toLowerCase()) {
+              kitColorFlag = true;
+            }
+          }
+        });
+        flag.push(kitColorFlag);
+      }
+      console.log(flag.includes(false));
+      if (!flag.includes(false)) {
+        newList.push(product);
+      }
+    });
+    console.log(newList)
+  }
+
+  //takes in an array
+  function createConditional(terms, type) {
+    let newTerm = "";
+    if (terms.length > 0) {
+      terms.forEach((term, i) => {
+        if (i === 0) {
+          newTerm = `product.${type} == "${term}" `
+        } else {
+          newTerm += `|| product.${type} == "${term}" `
+        }
+      });
+    }
+    // console.log(newTerm);
+    return newTerm;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // function search(productList, searchTerm) {
+  //   console.log(productList, searchTerm)
+  //   createConditionals(searchTerm);
+  //   productList.forEach(product => {
+
+  //   });
+  // }
+
+  // function createConditionals(searchTerm) {
+  //   let available = "";
+  //   let type = "";
+  //   let material = "";
+  //   let kitType = "";
+  //   let kitColor = ""
+  //   searchTerm.forEach(term => {
+  //     if (term.available) {
+  //       console.log(available.length)
+  //       if (available.length === 0) {
+  //         available = "product.available === term.available "
+  //       } else {
+  //         available += "|| product.avalable === term.available "
+  //       }
+  //     } else if (term.type) {
+  //       console.log('type')
+  //     } else if (term.material) {
+  //       console.log('material')
+  //     } else if (term.kitType) {
+  //       console.log('kitType')
+  //     } else if (term.kitColor) {
+  //       console.log('kitColor')
+  //     }
+  //   });
+  //   let term = "";
+  //   if (available) {
+  //     term += `(${available}) `;
+  //   }
+  //   if (type) {
+  //     if (term.length > 0){
+  //       term += ` && `
+  //     }       
+  //     term += `(${type}) `;      
+  //   }
+  //   if (type) {
+  //     if (term.length > 0){
+  //       term += ` && `
+  //     }       
+  //     term += `(${type}) `;      
+  //   }
+  //   if (type) {
+  //     if (term.length > 0){
+  //       term += ` && `
+  //     }       
+  //     term += `(${type}) `;      
+  //   }
+  //   if (type) {
+  //     if (term.length > 0){
+  //       term += ` && `
+  //     }       
+  //     term += `(${type}) `;      
+  //   }
+
+
+  //   console.log(term);
+  // }
+
+
+
+
+
+
+
+
+
+
+
+} //closes window.onload

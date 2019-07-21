@@ -87,7 +87,65 @@
 
 
     <div class="container" id="main-content">
-      <!-- <div class="row">
+      <!-- Contains everything for filters -->
+      <div>
+        <div class="row">
+          <a class="btn" id="filter">Filter</a>
+          <div id="filterbuttons" class="right">
+            <a class="btn" id="clear">Clear Filter</a>
+            <a class="btn" id="apply">Apply</a>
+          </div>
+        </div>
+        <div id="filters">
+          <div class="row">
+            <div class="input-field col s12 m4">
+              <select multiple>
+                <option value="" disabled selected>Available:</option>
+                <option value="true" class="available">Yes</option>
+                <option value="false" class="available">No</option>
+              </select>
+            </div>
+            <div class="input-field col s12 m4">
+              <select multiple>
+                <option value="" disabled selected>Type:</option>
+                <option value="pen" class="type">Pen</option>
+                <option value="bottle opener" class="type">Bottle Opener</option>
+              </select>
+            </div>
+            <div class="input-field col s12 m4">
+              <select multiple>
+                <option value="" disabled selected>Material:</option>
+                <option value="wood" class="material">Wood</option>
+                <option value="acrylic" class="material">Acrylic</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m4 offset-m2">
+              <select multiple>
+                <option value="" disabled selected>Kit Type:</option>
+                <option value="grenade" class="kitType">grenade</option>
+                <option value="clicker" class="kitType">clicker</option>
+                <option value="twist skull" class="kitType">twist skull</option>
+                <option value="twist" class="kitType">twist</option>
+                <option value="cap" class="kitType">cap</option>
+                <option value="spring cap" class="kitType">spring cap</option>
+              </select>
+            </div>
+            <div class="input-field col s12 m4">
+              <select multiple>
+                <option value="" disabled selected>Kit Color:</option>
+                <option value="pewter" class="kitColor">pewter</option>
+                <option value="silver" class="kitColor">silver</option>
+                <option value="gunmetal" class="kitColor">gunmetal</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="products">
+        <!-- <div class="row">
 
         <div class="col s12 m4 l3">
           <div class="card hoverable">
@@ -245,10 +303,10 @@
           </div>
 
           <!-- Modal Trigger -->
-      <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
-      <!-- Modal Structure -->
-      <!-- <div id="modal1" class="modal">
+        <!-- Modal Structure -->
+        <!-- <div id="modal1" class="modal">
         <div class="carousel">
           <a class="carousel-item" href="#one!"><img src="img/Pen Images/pen_1.jpeg"></a>
           <a class="carousel-item" href="#two!"><img src="img/Pen Images/pen_2.jpeg"></a>
@@ -303,6 +361,7 @@
           <a class="carousel-item" href="#three!"><img src="img/Pen Images/pen_2.jpeg"></a>
         </div>
       </div> -->
+      </div>
 
     </div>
     <div class="row">

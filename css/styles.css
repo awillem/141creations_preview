@@ -115,7 +115,7 @@ li div a {
     
   }
 
-  .select-wrapper {
+  form#displayQty .select-wrapper {
     width: 20vw !important;
   }
   
