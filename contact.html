@@ -25,6 +25,7 @@
 
 
 <body>
+  <br>
   <a href=" #" data-target="slide-out" class="sidenav-trigger"><i
       class="material-icons teal-text text-darken-2">menu</i></a>
 
@@ -66,7 +67,76 @@
   <main>
 
     <div class="container ">
-      Contact Form goes Here
+      <!-- <div class="row">
+        <a class="btn teal">Upcoming Events</a>
+        <a class="btn teal">Contact Us</a>
+      </div> -->
+      <div class="row">
+        <div class="col s12">
+          <form>
+          </form>
+        </div>
+      </div>
+
+      <div class="tab-container">
+        <ul id="tabs-swipe-demo" class="tabs">
+          <li class="tab col s3"><a class="white-text" class="" href="#test-swipe-1">Upcoming Events</a></li>
+          <li class="tab col s3"><a class="white-text active" href="#test-swipe-2">Contact Us</a></li>
+
+        </ul>
+        <div id="test-swipe-1" class="col s12 white">
+          <h2>Upcoming Events</h2>
+          <p>Come and visit 141 Creations at the following events:</p>
+          <ul class="collection ">
+            <li class="collection-item">Car Show @ Tuttle's Orchard — August 10th 8am - 3pm </li>
+            <li class="collection-item">Farmers Market @ The Meeting Place — August 17th 9am - 2pm </li>
+          </ul>
+        </div>
+        <div id="test-swipe-2" class="col s12 white">
+          <h2 class="center" id="contact-us">Contact Us</h2>
+          <div class="row">
+            <div class="col s8 offset-s2">
+              <p class="center">Thanks for stopping by 141 Creations! If you have a question for us, or would like to
+                make
+                an inquiry about
+                a custom order, please fill out the form below.</p>
+            </div>
+          </div>
+          <form action="#">
+            <div class="row">
+              <div class="input-field col s8 offset-s2">
+                <select>
+                  <option value="" disabled selected>How can we help you?</option>
+                  <option value="1">General Question</option>
+                  <option value="2">Custom Order Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field inline col s4 offset-s1">
+                <input placeholder="First and Last name" id="name" type="text" class="validate">
+              </div>
+              <div class="input-field inline col s6">
+                <input id="email" placeholder="Email" type="email" class="validate">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s10 offset-s1">
+                <textarea name="message" id="message" placeholder="Message" class="materialize-textarea"></textarea>
+
+              </div>
+
+
+
+
+          </form>
+        </div>
+      </div>
+
+
+
     </div>
   </main>
 
@@ -114,8 +184,16 @@
 
       $('.sidenav').sidenav();
 
+      const el = document.getElementById('tabs-swipe-demo')
+      var instance = M.Tabs.init(el, { swipeable: true });
+
+
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });
 
   </script>
 </body>

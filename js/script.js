@@ -8,6 +8,7 @@ const displayQtyForm = document.getElementById('displayQty');
 let currentList = products;
 const filterDiv = document.getElementById('filterDiv');
 console.log(currentList);
+const numList = ["one", "two", "three", "four", "five", "six", "seven", "eight"]
 
 function showPage(list, page, displayQty) {
   let newList = dateOrder(list);
@@ -25,6 +26,8 @@ function showPage(list, page, displayQty) {
   }
 
   console.log(start, end);
+
+
 
   let html = ``;
   let row = `<div class="row">`;
@@ -56,7 +59,25 @@ function showPage(list, page, displayQty) {
     var instances = M.Carousel.init(elems);
     instances[0].set(2);
   }
+
+  const images = Array.from(document.getElementsByTagName('img'));
+  let imageFlag = 0;
+  images.forEach(img => {
+    img.addEventListener('load', () => {
+      imageFlag++;
+      if (imageFlag === (displayQty * 4)) {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    });
+  });
+  var elems = document.querySelectorAll('.tooltipped');
+  var instances = M.Tooltip.init(elems);
+
+
 }
+
+
 
 
 
@@ -148,55 +169,73 @@ function productHtml(product, index) {
   <div class="col s12 m6 l3">
   <div class="card hoverable">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="${product.images[0]}">
-    </div>
+      <img class="activator card-image" src="${product.images[0]}">`
+  if (product.available) {
+    html += `
+      <a class="btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Still Available"><i class="material-icons white-text available">monetization_on</i></a>`
+  } else {
+    html += `
+        <a class="sold btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Sold"><i class="material-icons grey-text sold">money_off</i></a>
+        `
+  }
+  html += `
+    </div >
     <div class="card-content">
-      <span class="activator grey-text text-darken-"><span><a class="modal-trigger" href="#modal${index}">More
+      <span class="activator grey-text text-darken-"><span><a class="modal-trigger grey-text text-darken-2" href="#modal${index}">More
             Images</a><i class="material-icons right">info_outline</i></span>
     </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-
-      <ul class="collection">
-        <li class="collection-item"><span>Type: </span><span>${product.type}</span></li>
-        <li class="collection-item"><span>Material: </span><span>${product.material}</span></li>
-        <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</span></li>
-        <li class="collection-item"><span>Kit Metal Color: </span><span>${product.kitColor}</span></li>
-        <li class="collection-item"><span>Price: </span><span>${product.price}</span></li>
-      </ul>
+      <div class="card-reveal">
+        <div><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span></div>
+        <div id='coll'>
+        <ul class="collection">
+          <li class="collection-item"><span>Type: </span><span>${product.type}</span></li>
+          <li class="collection-item"><span>Material: </span><span>${product.material}</span></li>
+          <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</span></li>
+          <li class="collection-item"><span>Kit Metal Color: </span><span>${product.kitColor}</span></li>
+          <li class="collection-item"><span>Price: </span><span>${product.price}</span></li>
+        </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+</div >
 
-<div id="modal${index}" class="modal">
-            <div class="carousel">
-              <a class="carousel-item" href="#one!"><img src="${product.images[0]}"></a>
-              <a class="carousel-item" href="#two!"><img src="${product.images[1]}"></a>
-              <a class="carousel-item" href="#three!"><img src="${product.images[2]}"></a>
+    <div id="modal${index}" class="modal">
+      <div class="carousel">
+      `
+  for (let i = 0; i < product.images.length; i++) {
+    let num = numList[i];
+    html += `<a class="carousel-item" href="#${num}!"><img src="${product.images[i]}"></a>`;
+  }
+
+ 
+        // <a class="carousel-item" href="#one!"><img src="${product.images[0]}"></a>
+        //   <a class="carousel-item" href="#two!"><img src="${product.images[1]}"></a>
+        //     <a class="carousel-item" href="#three!"><img src="${product.images[2]}"></a>
+        html += `
             </div>
           </div>
-  `;
+          `;
   return html;
 }
 
 function appendDisplayQty() {
   let html = `
   <form>
-      <div class="row display">
-        <div class="container">
-          <div class="input-field col s2 offset-s5">
-            <select class="center">
-              <option value="4">4</option>
-              <option value="8" class="center-align" selected>8</option>
-              <option value="12">12</option>
-              <option value="20">20</option>
-            </select>
-            <label class="teal-text display">Display Quantity:</label>
-          </div>
-        </div>
-      </div>
-    </form>
-  `;
+            <div class="row display">
+              <div class="container">
+                <div class="input-field col s2 offset-s5">
+                  <select class="center">
+                    <option value="4">4</option>
+                    <option value="8" class="center-align" selected>8</option>
+                    <option value="12">12</option>
+                    <option value="20">20</option>
+                  </select>
+                  <label class="teal-text display">Display Quantity:</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          `;
   displayQtyForm.innerHTML = html;
 }
 
@@ -209,10 +248,7 @@ displayQtyForm.addEventListener('change', e => {
 })
 
 
-// filters products by availability, type, material, kitType, kitColor
-function filterProducts() {
 
-}
 
 // returns product array in order by date descending
 function dateOrder(array) {
@@ -325,7 +361,7 @@ window.onload = function () {
   });
 
   // Uses the object searchTerm gotten form the apply click listener
-  // performs search through products array and sets currentList to it.  
+  // performs search through products array and sets currentList to it.
   // Then calls pageList()
 
   function search(productList, searchTerm) {
@@ -413,9 +449,6 @@ window.onload = function () {
         box.click()
         box.checked = false;
       }
-      // console.log("after click", checkboxes.checked)
-      // box.setAttribute("checked", false);
-      // console.log("after change", checkboxes.checked)
     })
     console.log(checkboxes);
     currentList = products;
