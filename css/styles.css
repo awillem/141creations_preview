@@ -235,11 +235,11 @@ form div {
     height: 500px !important;
   }
   .modal .carousel {
-    height: 650px;
+    height: 680px;
   }
   .modal .carousel-item {
-    width: 400px;
-    height: 400px
+    width: 350px;
+    height: 350px
   }
 }
 
@@ -258,4 +258,8 @@ form div {
   .nav-wrapper img {
     width: 100%;
   }
+}
+
+[src$=jpg] {
+  width: 100%;
 }
