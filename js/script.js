@@ -207,11 +207,11 @@ function productHtml(product, index) {
     html += `<a class="carousel-item" href="#${num}!"><img src="${product.images[i]}"></a>`;
   }
 
- 
-        // <a class="carousel-item" href="#one!"><img src="${product.images[0]}"></a>
-        //   <a class="carousel-item" href="#two!"><img src="${product.images[1]}"></a>
-        //     <a class="carousel-item" href="#three!"><img src="${product.images[2]}"></a>
-        html += `
+
+  // <a class="carousel-item" href="#one!"><img src="${product.images[0]}"></a>
+  //   <a class="carousel-item" href="#two!"><img src="${product.images[1]}"></a>
+  //     <a class="carousel-item" href="#three!"><img src="${product.images[2]}"></a>
+  html += `
             </div>
           </div>
           `;
@@ -387,7 +387,7 @@ window.onload = function () {
         searchTerm.type.forEach(term => {
           if (!typeFlag) {
             // console.log(product.type == term.toLowerCase());
-            if (product.type == term.toLowerCase()) {
+            if (product.type.toLowerCase() == term.toLowerCase()) {
               typeFlag = true;
             }
           }
@@ -399,7 +399,7 @@ window.onload = function () {
         let materialFlag = false;
         searchTerm.material.forEach(term => {
           if (!materialFlag) {
-            if (product.material == term.toLowerCase()) {
+            if (product.material.toLowerCase() == term.toLowerCase()) {
               materialFlag = true;
             }
           }
@@ -411,7 +411,7 @@ window.onload = function () {
         let kitTypeFlag = false;
         searchTerm.kitType.forEach(term => {
           if (!kitTypeFlag) {
-            if (product.kitType == term) {
+            if (product.kitType.toLowerCase() == term.toLowerCase()) {
               kitTypeFlag = true;
             }
           }
@@ -423,7 +423,7 @@ window.onload = function () {
         let kitColorFlag = false;
         searchTerm.kitColor.forEach(term => {
           if (!kitColorFlag) {
-            if (product.kitColor == term.toLowerCase()) {
+            if (product.kitColor.toLowerCase() == term.toLowerCase()) {
               kitColorFlag = true;
             }
           }

@@ -3,7 +3,7 @@ const path = 'img/Product Images/';
 let products = [
   {
     id: "100-00001",
-    type: "pen",
+    type: "Pen",
     pen_type: "Bolt Action",
     kitType: "Salute the Troops ",
     kitColor: "Antique Brass",
@@ -19,7 +19,7 @@ let products = [
   },
   {
     id: "100-00002",
-    type: "pen",
+    type: "Pen",
     pen_type: "Rollerball",
     kitType: "Faith, Hope, and Love",
     kitColor: "Antique Pewter",
@@ -37,7 +37,7 @@ let products = [
 
   {
     id: "100-00003",
-    type: "pen",
+    type: "Pen",
     pen_type: "Twist",
     kitType: "Nautical",
     kitColor: "Antique Pewter",
@@ -54,7 +54,7 @@ let products = [
 
   {
     id: "300-00001",
-    type: "letter opener",
+    type: "Letter opener",
     pen_type: "",
     kitType: "Majestic",
     kitColor: "Black and Rhodium",
@@ -73,7 +73,7 @@ let products = [
 
   {
     id: "100-00004",
-    type: "pen",
+    type: "Pen",
     pen_type: "Twist",
     kitType: "Trimline",
     kitColor: "GunMetal",
@@ -91,8 +91,8 @@ let products = [
 
   {
     id: "100-00005",
-    type: "pen",
-    pen_type: "twist",
+    type: "Pen",
+    pen_type: "Twist",
     kitType: "Trimline",
     kitColor: "Gunmetal",
     "material": "Cat's Eye",
@@ -108,7 +108,7 @@ let products = [
 
   {
     id: "200-00001",
-    type: "Mechanical Pencil",
+    type: "Mechanical pencil",
     pen_type: "Pencil",
     kitType: "Vertex",
     kitColor: "Gunmetal",
@@ -125,7 +125,7 @@ let products = [
 
   {
     id: "100-00007",
-    type: "pen",
+    type: "Pen",
     pen_type: "Click Pen",
     kitType: "Vertex",
     kitColor: "Gunmetal",
@@ -143,8 +143,8 @@ let products = [
 
   {
     id: "100-00008",
-    type: "pen ",
-    pen_type: "twist",
+    type: "Pen",
+    pen_type: "Twist",
     kitType: "Nautical",
     kitColor: "Antique Pewter",
     "material": "Inlay",
@@ -161,8 +161,8 @@ let products = [
 
   {
     id: "100-00009",
-    type: "pen",
-    pen_type: "twist",
+    type: "Pen",
+    pen_type: "Twist",
     kitType: "Aromatherapy",
     kitColor: "Chrome",
     "material": "Lylac Water",
@@ -179,8 +179,8 @@ let products = [
 
   {
     id: "100-00010",
-    type: "pen",
-    pen_type: "twist",
+    type: "Pen",
+    pen_type: "Twist",
     kitType: "Trimline",
     kitColor: "Chrome",
     "material": "Area 51",
@@ -197,8 +197,8 @@ let products = [
 
   {
     id: "100-00006",
-    type: "pen",
-    pen_type: "twist",
+    type: "Pen",
+    pen_type: "Twist",
     kitType: "Trimline",
     kitColor: "Chrome",
     "material": "Sapphire Blue",
