@@ -88,8 +88,9 @@
           <h2>Upcoming Events</h2>
           <p>Come and visit 141 Creations at the following events:</p>
           <ul class="collection ">
-            <li class="collection-item">Car Show @ Tuttle's Orchard — August 10th 8am - 3pm </li>
-            <li class="collection-item">Farmers Market @ The Meeting Place — August 17th 9am - 2pm </li>
+            <li class="collection-item">No events currently schedule. Check back often!</li>
+            <!-- <li class="collection-item">Car Show @ Tuttle's Orchard — August 10th 8am - 3pm </li>
+            <li class="collection-item">Farmers Market @ The Meeting Place — August 17th 9am - 2pm </li> -->
           </ul>
         </div>
         <div id="test-swipe-2" class="col s12 white">
@@ -102,31 +103,40 @@
                 a custom order, please fill out the form below.</p>
             </div>
           </div>
-          <form action="#">
+          <form action="https://formspree.io/xbjrkkjv" method="POST">
             <div class="row">
               <div class="input-field col s8 offset-s2">
-                <select>
+                <select name="question">
                   <option value="" disabled selected>How can we help you?</option>
-                  <option value="1">General Question</option>
-                  <option value="2">Custom Order Inquiry</option>
+                  <option value="General Question">General Question</option>
+                  <option value="Would like to purchase a pen">Would like to purchase a pen</option>
+                  <option value="Custom Order Inquiry">Custom Order Inquiry</option>
                 </select>
               </div>
             </div>
 
             <div class="row">
               <div class="input-field inline col s4 offset-s1">
-                <input placeholder="First and Last name" id="name" type="text" class="validate">
+                <input placeholder="Full name" name="name" id="name" type="text" class="validate">
               </div>
               <div class="input-field inline col s6">
-                <input id="email" placeholder="Email" type="email" class="validate">
+                <input id="email" placeholder="Email" name="email" type="email" class="validate">
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s10 offset-s1">
-                <textarea name="message" id="message" placeholder="Message" class="materialize-textarea"></textarea>
+                <textarea name="message" id="message" name="message" placeholder="Message"
+                  class="materialize-textarea"></textarea>
 
               </div>
+            </div>
+
+            <div class="row center-align">
+              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
 
 
 

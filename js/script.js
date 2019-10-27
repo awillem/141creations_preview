@@ -181,8 +181,8 @@ function productHtml(product, index) {
   html += `
     </div >
     <div class="card-content">
-      <span class="activator grey-text text-darken-"><span><a class="modal-trigger grey-text text-darken-2" href="#modal${index}">More
-            Images</a><i class="material-icons right">info_outline</i></span>
+      <span class="activator grey-text text-darken-"><span><a class="modal-trigger teal-text text-darken-2" href="#modal${index}"><strong>More
+            Images</strong></a><i class="material-icons right">info_outline</i></span>
     </div>
       <div class="card-reveal">
         <div><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span></div>
@@ -223,8 +223,8 @@ function appendDisplayQty() {
   <form>
             <div class="row display">
               <div class="container">
-                <div class="input-field col s2 offset-s5">
-                  <select class="center">
+                <div class="input-field col s8 offset-s4">
+                  <select class="">
                     <option value="4">4</option>
                     <option value="8" class="center-align" selected>8</option>
                     <option value="12">12</option>
