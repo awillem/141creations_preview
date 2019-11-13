@@ -497,7 +497,7 @@ let products = [
     material: "Wood",
     material_info: "Reclaimed Maple",
     price: "$25.00",
-    available: true,
+    available: false,
     created: "11/3/19",
     images: [
       `${path}100-00022-01.jpg`,
@@ -584,25 +584,7 @@ let products = [
     ],
 
   },
-  {
-    id: "100-00029",
-    type: "Pen",
-    pen_type: "Twist",
-    kitType: "EXECUTIVE",
-    kitColor: "Black Enamal",
-    material: "Wood",
-    material_info: "Macassar Ebony",
-    price: "$30.00",
-    available: false,
-    created: "11/3/19",
-    images: [
-      `${path}100-00029-01.jpg`,
-      `${path}100-00029-02.jpg`,
-      `${path}100-00029-03.jpg`,
 
-    ],
-
-  },
   {
     id: "200-00003",
     type: "Mechanical Pencil",

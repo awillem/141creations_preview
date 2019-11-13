@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Import Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <title>141 Creations</title>
+</head>
+
+
+<body>
+  <br>
+  <a href=" #" data-target="slide-out" class="sidenav-trigger"><i
+      class="material-icons teal-text text-darken-2">menu</i></a>
+
+  <nav class="transparent z-depth-0">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img src="img/141logo_paths_update.svg" alt=""></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="product.html" class="btn white-text teal darken-2">Product Gallery</a></li>
+          <li><a href="about.html" class="btn white-text teal darken-2">About</a></li>
+          <li><a href="contact.html" class="btn white-text teal darken-2">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul id="slide-out" class="sidenav teal">
+    <li>
+      <div class="user-view ">
+        <div class="background grey lighten-3">
+          <img src="img/tileable-wood.png">
+        </div>
+        <a href="index.html"><img class="" src="img/141logo_paths_octagon.svg"></a>
+      </div>
+    </li>
+    <li><a href="product.html" class="sidenav-close">Product Gallery</a></li>
+    <li>
+      <div class="divider grey darken"></div>
+    </li>
+    <li><a href="about.html" class="sidenav-close">About</a></li>
+    <li>
+      <div class="divider grey darken"></div>
+    </li>
+    <li><a href="contact.html" class="sidenav-close">Contact</a></li>
+  </ul>
+  <!-- <a href=" #" data-target="slide-out" class="sidenav-trigger"><i class="material-icons ">menu</i></a> -->
+
+
+  <main>
+    <div class="container" id="sw_container">
+      <h1 class="center">Sweepstakes Entry</h1>
+      <h3 class="center"><strong>Prize:</strong><span> $50 credit towards the purchase of 1 pen of the winner's
+          choice.</span>
+      </h3>
+      <p class="center">For more details on the sweepstakes, prize, and privacy, please read the <span
+          class="modal-trigger">Full Rules</span>
+      </p>
+
+      <form class="col s12" id="sweepstakes">
+        <div>
+          <fieldset>
+
+            <legend>About You</legend>
+            <div class="row">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="sw_first_name" type="text" class="validate">
+                  <label for="sw_first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="sw_last_name" type="text" class="validate">
+                  <label for="sw_last_name">Last Name</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m8">
+                  <input id="sw_email" type="email" class="validate">
+                  <label for="sw_email">Email</label>
+                </div>
+                <div class="input-field col s12 m4">
+                  <input id="sw_age" type="number" class="validate">
+                  <label for="sw_age">Age</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12 m7">
+                  <input id="sw_city" type="text" class="validate">
+                  <label for="sw_city">City</label>
+                </div>
+                <div class="input-field col s12 m5" id="sw_state">
+                  <select name="sw_state">
+
+                    <option value="" disabled selected>State</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="District of Columbia">District of Columbia</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virgini">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
+          </fieldset>
+          <fieldset>
+            <legend>About Us</legend>
+            <div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="sw_about_us" type="text" class="validate">
+                  <label for="sw_about_us">How did you hear about us?</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12" id="sw_purchase">
+                  <p><label>Have your purchased from 141 Creations before?</label></p>
+                  <p>
+                    <label>
+                      <input name="sw_purchase" type="radio" class="with-gap" />
+                      <span>Yes</span>
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      <input name="sw_purchase" type="radio" class="with-gap" />
+                      <span>No</span>
+                    </label>
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12 clearfix" id="sw_price">
+                  <div class="input-field col s8 offset-s1 clearfix">
+                    <select name="sw_value">
+                      <option value="" disabled selected>Price Value</option>
+                      <option value="tooLow">Price was too low</option>
+                      <option value="justRight">Price was just right</option>
+                      <option value="tooHigh">Price was too high</option>
+                    </select>
+                    <label>If Yes, what did you think of our prices?</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="suggestions" class="materialize-textarea"></textarea>
+                  <label for="suggestions">Suggestions for new products.....</label>
+                </div>
+              </div>
+            </div>
+        </div>
+
+
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="modal-container invisible">
+      <div class="modal-content">
+        <div class="close-container"><span class="close"><i class="small material-icons">close</i></span></div>
+        <div class="modal-content-container">
+          <h2>Contest Rules</h2>
+          <p>
+            NO PURCHASE IS NECESSARY TO ENTER OR WIN. A PURCHASE DOES NOT INCREASE THE CHANCES OF WINNING.</p>
+
+          <p>1. Eligibility: Sweepstakes (the “Sweepstakes”) is open only to those who sign up at the online sweepstakes
+            page and who are 13 as of the date of entry. The sweepstakes is only open to legal residents of United
+            States
+            of America and is void where prohibited by law. Employees of 141 Creations (the “Sponsor”), their immediate
+            family members and/or those living in the same household of each are not eligible to participate in the
+            Sweepstakes. The Sweepstakes is subject to all applicable federal, state and local laws and regulations.
+            Void
+            where prohibited.</p>
+
+          <p>2. Agreement to Rules: By participating, you agree to be fully unconditionally bound by these Rules, and
+            you
+            represent and warrant that you meet the eligibility requirements set forth herein. In addition, you agree to
+            accept the decisions of 141 Creations, as final and binding as it relates to the content. The Sweepstakes is
+            subject to all applicable federal, state and local laws.</p>
+
+          <p>3. Sweepstakes Period: Entries will be accepted online starting on or about [start date] and ending [end
+            date]. All online entries must be received by [end date] 11:59PM EST.</p>
+
+          <p>4. How to Enter: The Sweepstakes must be entered by submitting an entry using the online form provided on
+            this Sweepstakes site. The entry must fulfill all sweepstakes requirements, as specified, to be eligible to
+            win a prize. Entries that are not complete or do not adhere to the rules or specifications may be
+            disqualified
+            at the sole discretion of 141 Creations. You may enter only once and you must fill in the information
+            requested. You may not enter more times than indicated by using multiple email addresses, identities or
+            devices in an attempt to circumvent the rules. If you use fraudulent methods or otherwise attempt to
+            circumvent the rules your submission may be removed from eligibility at the sole discretion of 141
+            Creations.
+          </p>
+
+          <p>5. Prizes: Winners will receive a fifty dollar credit to be used towards one pen of the winner’s choice.
+            Engraving is not included. Credit must be used within ninety days or will be subject to forfeiture.
+            Actual/appraised value may differ at time of prize award. The specifics of the prize shall be solely
+            determined by the Sponsor. No cash or other prize substitution permitted except at Sponsor's discretion. The
+            prize is non-transferable. Any and all prize related expenses, including without limitation any and all
+            federal, state, and/or local taxes shall be the sole responsibility of the winner. No substitution of prize
+            or
+            transfer/assignment of prize to others or request for the cash equivalent by winners is permitted.
+            Acceptance
+            of prize constitutes permission for 141 Creations to use winner's name, likeness, and entry for purposes of
+            advertising and trade without further compensation, unless prohibited by law.</p>
+
+          <p>6. Odds: The odds of winning depend on the number of eligible entries received.</p>
+
+          <p>7. Winner selection and notification: Winners of the Sweepstakes will be selected in a random drawing under
+            the supervision of the Sponsor. Winners will be notified via email to the email address they entered the
+            Sweepstakes with within five (5) days following the winner selection. 141 Creations shall have no liability
+            for a winner's failure to receive notices due to winners' spam, junk e-mail or other security settings or
+            for
+            winners' provision of incorrect or otherwise non-functioning contact information. If the selected winner
+            cannot be contacted, is ineligible, fails to claim the prize within 15 days from the time award notification
+            was sent, or fails to timely return a completed and executed declaration and releases as required, prize may
+            be forfeited and an alternate winner selected. </p>
+
+          <p> The receipt by winner of the prize offered in this Sweepstakes is conditioned upon compliance with any and
+            all federal and state laws and regulations. ANY VIOLATION OF THESE OFFICIAL RULES BY ANY WINNER (AT
+            SPONSOR'S
+            SOLE DISCRETION) WILL RESULT IN SUCH WINNER'S DISQUALIFICATION AS WINNER OF THE SWEEPSTAKES AND ALL
+            PRIVILEGES
+            AS WINNER WILL BE IMMEDIATELY TERMINATED.</p>
+
+          <p> 8. Rights Granted by you: By entering this content you understand that 141 Creations, anyone acting on
+            behalf of 141 Creations, or its respective licensees, successors and assigns will have the right, where
+            permitted by law, without any further notice, review or consent to print, publish, broadcast, distribute,
+            and
+            use, worldwide in any media now known or hereafter in perpetuity and throughout the World, your entry,
+            including, without limitation, the entry and winner's name, portrait, picture, voice, likeness, image or
+            statements about the Sweepstakes, and biographical information as news, publicity or information and for
+            trade, advertising, public relations and promotional purposes without any further compensation.</p>
+
+          <p> 9. Terms: 141 Creations reserves the right, in its sole discretion to cancel, terminate, modify or suspend
+            the Sweepstakes should (in its sole discretion) a virus, bugs, non-authorized human intervention, fraud or
+            other causes beyond its control corrupt or affect the administration, security, fairness or proper conduct
+            of
+            the Sweepstakes. In such case, 141 Creations may select the recipients from all eligible entries received
+            prior to and/or after (if appropriate) the action taken by 141 Creations. 141 Creations reserves the right
+            at
+            its sole discretion to disqualify any individual who tampers or attempts to tamper with the entry process or
+            the operation of the Sweepstakes or website or violates these Terms & Conditions.</p>
+
+          <p>141 Creations has the right, in its sole discretion, to maintain the integrity of the Sweepstakes, to void
+            votes for any reason, including, but not limited to; multiple entries from the same user from different IP
+            addresses; multiple entries from the same computer in excess of that allowed by sweepstakes rules; or the
+            use
+            of bots, macros or scripts or other technical means for entering.
+            Any attempt by an entrant to deliberately damage any web site or undermine the legitimate operation of the
+            sweepstakes may be a violation of criminal and civil laws and should such an attempt be made, 141 Creations
+            reserves the right to seek damages from any such person to the fullest extent permitted by law.</p>
+
+          <p>By entering the Sweepstakes you agree to receive email newsletters periodically from [company name]. You
+            can
+            opt-out of receiving this communication at any time by clicking the unsubscribe link in the newsletter.</p>
+
+          <p>10. Limitation of Liability: By entering you agree to release and hold harmless 141 Creations and its
+            subsidiaries, affiliates, advertising and promotion agencies, partners, representatives, agents, successors,
+            assigns, employees, officers and directors from any liability, illness, injury, death, loss, litigation,
+            claim
+            or damage that may occur, directly or indirectly, whether caused by negligence or not, from (i) such
+            entrant's
+            participation in the sweepstakes and/or his/her acceptance, possession, use, or misuse of any prize or any
+            portion thereof, (ii) technical failures of any kind, including but not limited to the malfunctioning of any
+            computer, cable, network, hardware or software; (iii) the unavailability or inaccessibility of any
+            transmissions or telephone or Internet service; (iv) unauthorized human intervention in any part of the
+            entry
+            process or the Promotion; (v) electronic or human error which may occur in the administration of the
+            Promotion
+            or the processing of entries.</p>
+
+          <p>11. Disputes: THIS SWEEPSTAKES IS GOVERNED BY THE LAWS OF THE UNITED STATES OF AMERICA AND INDIANA, WITHOUT
+            RESPECT TO CONFLICT OF LAW DOCTRINES. As a condition of participating in this Sweepstakes, participant
+            agrees
+            that any and all disputes which cannot be resolved between the parties, and causes of action arising out of
+            or
+            connected with this Sweepstakes, shall be resolved individually, without resort to any form of class action,
+            exclusively before a court located in INDIANA having jurisdiction. Further, in any such dispute, under no
+            circumstances will participant be permitted to obtain awards for, and hereby waives all rights to claim
+            punitive, incidental, or consequential damages, including reasonable attorneys' fees, other than
+            participant's
+            actual out-of-pocket expenses (i.e. costs associated with entering this Sweepstakes), and participant
+            further
+            waives all rights to have damages multiplied or increased.</p>
+
+          <p>12. Privacy Policy: Information submitted with an entry is subject to the Privacy Policy stated on the 141
+            Creations Web Site. To read the Privacy Policy, [privacy policy URL] click here.</p>
+
+
+          <p>13. Winners List: To obtain a copy of the winner's name or a copy of these Official Rules, mail your
+            request
+            along with a stamped, self-addressed envelope to: 141 Creations, 119 Fountain Lake Drive, Greenfield, IN.
+            Requests must be received no later than [date].</p>
+
+          <p>14. Sponsor: The Sponsor of the Sweepstakes is 141 Creations, 119 Fountain Lake Drive, Greenfield, IN.</p>
+
+          <h2>Privacy Notice</h2>
+
+          <p></p>This privacy notice discloses the privacy practices for (website address).
+          This privacy notice applies solely to information collected by this website.
+          It will notify you of the following:</p>
+          <ol>
+            <li>What personally identifiable information is collected from you
+              through the website, how it is used and with whom it may be
+              shared.</li>
+            <li>What choices are available to you regarding the use of your
+              data.</li>
+            <li>The security procedures in place to protect the misuse of your
+              information.</li>
+            <li>How you can correct any inaccuracies in the information.</li>
+          </ol>
+
+          <h4>Information Collection, Use, and Sharing</h4>
+
+          <p>We are the sole owners of the information collected on this site. We only
+            have access to/collect information that you voluntarily give us via email
+            or other direct contact from you. We will not sell or rent this information to
+            anyone.</p>
+
+          <p>We will use your information to respond to you, regarding the reason you
+            contacted us. We will not share your information with any third party
+            outside of our organization, other than as necessary to fulfill your
+            request, e.g. to ship an order.</p>
+
+          <p>Unless you ask us not to, we may contact you via email in the future to
+            tell you about specials, new products or services, or changes to this
+            privacy policy.</p>
+
+          <h4>Your Access to and Control Over Information</h4>
+
+          <p>You may opt out of any future contacts from us at any time. You can do
+            the following at any time by contacting us via the email address or phone
+            number given on our website:</p>
+
+          <ul>
+            <li>See what data we have about you, if any.</li>
+            <li>Change/correct any data we have about you.</li>
+            <li>Have us delete any data we have about you.</li>
+            <li>Express any concern you have about our use of your data.</li>
+
+          </ul>
+
+          <h4>Security</h4>
+
+          <p>We take precautions to protect your information. When you submit
+            sensitive information via the website, your information is protected both
+            online and offline.</p>
+
+          <p>Wherever we collect sensitive information (such as credit card data), that
+            information is encrypted and transmitted to us in a secure way. You can
+            verify this by looking for a lock icon in the address bar and looking for
+            "https" at the beginning of the address of the Web page.</p>
+
+          <p>While we use encryption to protect sensitive information transmitted
+            online, we also protect your information offline. Only employees who
+            need the information to perform a specific job (for example, billing or
+            customer service) are granted access to personally identifiable
+            information. The computers/servers in which we store personally
+            identifiable information are kept in a secure environment.</p>
+
+          <p>We use "cookies" on this site. A cookie is a piece of data stored on a site
+            visitor's hard drive to help us improve your access to our site and identify
+            repeat visitors to our site. For instance, when we use a cookie to identify
+            you, you would not have to log in a password more than once, thereby
+            saving time while on our site. Cookies can also enable us to track and
+            target the interests of our users to enhance the experience on our site.
+            Usage of a cookie is in no way linked to any personally identifiable
+            information on our site.</p>
+
+          <p>If you feel that we are not abiding by this privacy policy, you should
+            contact us immediately via email at <a href="mailto:tony@141creations.com">tony@141creations.com</a>.</p>
+
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </main>
+
+
+  <footer class="page-footer grey darken-1">
+    <div class="footer-copyright teal darken-3">
+      <div class="container">
+        © 2019 141 Creations
+        <a class="grey-text text-lighten-4 right" href="https://www.facebook.com/141Creations/" target="_blank"><i
+            class="fab fa-2x fa-facebook-square"></i></a>
+        <a class="grey-text text-lighten-4 right" href="https://twitter.com/TonyWillmann" target="_blank"><i
+            class="fab fa-2x fa-twitter-square"></i></a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel').carousel({
+        // fullWidth: true,
+        indicators: true
+      });
+
+      $('.sidenav').sidenav();
+
+      $('select').formSelect();
+
+    });
+
+
+  </script>
+  <script src="js/sweepstake.js"></script>
+</body>
+
+</html>
