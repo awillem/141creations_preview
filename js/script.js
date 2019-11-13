@@ -1,6 +1,5 @@
 
 const productDiv = document.getElementById('products');
-console.log(productDiv)
 const paginationUL = document.querySelector('ul.pagination');
 const cardContainer = document.querySelector('main div.container');
 let displayQty = 8;
@@ -254,10 +253,10 @@ displayQtyForm.addEventListener('change', e => {
 function dateOrder(array) {
   array.sort(function (a, b) {
     if (new Date(a.created) < new Date(b.created)) {
-      return -1;
+      return 1;
     }
     if (new Date(a.created) > new Date(b.created)) {
-      return 1;
+      return -1;
     }
 
     return 0;
@@ -501,3 +500,4 @@ window.onload = function () {
 
 
 } //closes window.onload
+
