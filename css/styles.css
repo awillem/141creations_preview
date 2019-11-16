@@ -30,6 +30,10 @@ main {
   background-color: #009688 !important;
 }
 
+.btn.filter:hover {
+  background-color: #ff5722 !important;
+}
+
 .sidenav {
   width: 200px;
 }
@@ -310,43 +314,43 @@ a.modal-trigger.teal-text:hover {
 
 /* Sweepstakes */
 
-h3 span {
+/* h3 span {
   font-size: .8em;
-}
+} */
 
-#sw_container>p:nth-of-type(1) {
+/* #sw_container>p:nth-of-type(1) {
   font-size: 1.4em;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
-}
+} */
 
-p span {
+/* p span {
   font-weight: bold;
   font-size: 1.1em;
   color: rgba(0, 150, 136);
   transition: .3s;
   text-shadow: none;
-}
+} */
 
-p span:hover {
+/* p span:hover {
   color: black;
   text-shadow: 2px 2px 4px rgba(0, 150, 136, .4);
   cursor: pointer;
-}
+} */
 
-form#sweepstakes {
+/* form#sweepstakes {
   background: white;
   padding: 15px;
   border-radius: 5px;
   border: 5px black solid;
   margin-bottom: 20px;
-}
+} */
 
-legend {
+/* legend {
   font-weight: bold;
   padding: 8px;
-}
+} */
 
-fieldset>div:first-of-type {
+/* fieldset>div:first-of-type {
   padding: 20px;
 }
 
@@ -360,9 +364,9 @@ fieldset:nth-of-type(2) {
 
 #sw_state {
   z-index: 1;
-}
+} */
 
-#sw_state div.select-wrapper input.select-dropdown, #sw_state div.select-wrapper ul.select-dropdown, div.select-wrapper svg.caret {
+/* #sw_state div.select-wrapper input.select-dropdown, #sw_state div.select-wrapper ul.select-dropdown, div.select-wrapper svg.caret {
   margin-top: 0px;
   z-index: 1;
 }
@@ -373,9 +377,9 @@ select {
 
 #sw_purchase p {
   display: inline-block;
-}
+} */
 
-#sw_purchase p {
+/* #sw_purchase p {
   margin-top: 0;
   padding-left: 25px;
 }
@@ -392,9 +396,9 @@ select {
 #sw_price div.select-wrapper input.select-dropdown, #sw_price div.select-wrapper ul.select-dropdown, div.select-wrapper svg.caret {
   margin-top: 0px;
   z-index: 1;
-}
+} */
 
-#sw_price label {
+/* #sw_price label {
   height: 25px;
 }
 
@@ -415,9 +419,9 @@ select {
   visibility: hidden;
   transition: opacity .4s ease-out 0s;
   transition-delay: visibility .4s;
-}
+} */
 
-.modal-content {
+/* .modal-content {
   width: 66%;
   height: 80%;
   background: white;
@@ -427,7 +431,6 @@ select {
   top: 10%;
   left: 17%;
   overflow-y: auto;
-  /* padding: 35px; */
   line-height: 1.8em;
 }
 
@@ -458,4 +461,4 @@ select {
   transform: scale(1.35);
   color: rgb(0, 150, 136);
   cursor: pointer;
-}
+} */

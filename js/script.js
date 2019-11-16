@@ -187,11 +187,31 @@ function productHtml(product, index) {
         <div><span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span></div>
         <div id='coll'>
         <ul class="collection">
-          <li class="collection-item"><span>Type: </span><span>${product.type}</span></li>
-          <li class="collection-item"><span>Material: </span><span>${product.material}</span></li>
-          <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</span></li>
-          <li class="collection-item"><span>Kit Metal Color: </span><span>${product.kitColor}</span></li>
-          <li class="collection-item"><span>Price: </span><span>${product.price}</span></li>
+
+          <li class="collection-item"><span>Type: </span><span>${product.type}`
+  if (product.pen_type) {
+    html += `<span> - </span><span><em>${product.pen_type}</em></span>`
+  }
+
+
+  html += `
+  </span></li><li class="collection-item"><span>Material: </span><span>${product.material}`;
+
+  if (product.material_info) {
+    html += `<span> - </span><span>${product.material_info}</span></li>`;
+  }
+  html += `
+          <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</<span> - </span><span>${product.kitColor}</span></li>
+          <li class="collection-item"><span>Price: </span><span><strong>${product.price}</strong></span></li>
+          <li class="collection-item"><span>ID: </span><span>${product.id}</span></li>
+          <li class="collection-item"><span>Available: </span><span>`
+  if (product.available) {
+    html += `Yes`;
+  } else {
+    html += `No`;
+  }
+  html += `
+          </span></li>
         </ul>
         </div>
       </div>
@@ -222,14 +242,14 @@ function appendDisplayQty() {
   <form>
             <div class="row display">
               <div class="container">
-                <div class="input-field col s8 offset-s4">
+                <div class="input-field col s8 offset-s2">
                   <select class="">
                     <option value="4">4</option>
                     <option value="8" class="center-align" selected>8</option>
                     <option value="12">12</option>
                     <option value="20">20</option>
                   </select>
-                  <label class="teal-text display">Display Quantity:</label>
+                  <label class="teal-text display center-align">Display Quantity:</label>
                 </div>
               </div>
             </div>
@@ -263,6 +283,52 @@ function dateOrder(array) {
   })
   return array
 }
+
+
+const typeSelect = document.getElementById('type');
+const materialSelect = document.getElementById('material');
+const kitTypeSelect = document.getElementById('kitType');
+const kitColorSelect = document.getElementById('kitColor');
+
+// Create Dropdowns for Filters
+// @param filterString -- string of dropdown option, ex. type, material
+// @param div -- the container div to set html to. 
+function createDropdowns(filterString, div) {
+  const options = [];
+  products.forEach(prod => options.push(prod[filterString]));
+  const reducedOptions = [... new Set(options)];
+
+  // optionName is the lists display name for the default disabled option
+  let optionName = "";
+  if (filterString === 'kitType') {
+    optionName = "Kit Type:";
+  } else if (filterString === 'kitColor') {
+    optionName = "Kit Color:";
+  } else {
+    optionName = filterString[0].toUpperCase() + filterString.slice(1) + ":";
+  }
+
+  //creates the html to append to the filter
+  let html = "";
+  html += `
+    <option value="" disabled>${optionName}</option>
+  `;
+  reducedOptions.forEach(option => {
+    html += `
+      <option value="${option}" class="${filterString}">${option}</option>
+    `;
+  });
+
+  div.innerHTML = html;
+  console.log(html);
+
+}
+createDropdowns('type', typeSelect);
+createDropdowns('material', materialSelect);
+createDropdowns('kitType', kitTypeSelect);
+createDropdowns('kitColor', kitColorSelect);
+
+
 
 /**** FILTERS ****/
 

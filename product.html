@@ -91,10 +91,10 @@
       <!-- Contains everything for filters -->
       <div id="filterDiv">
         <div class="row">
-          <a class="btn teal darken-2" id="filter">Filter</a>
+          <a class="btn deep-orange lighten-2 filter" id="filter">Filter</a>
           <div id="filterbuttons" class="right">
-            <a class="btn teal darken-2" id="clear">Clear Filter</a>
-            <a class="btn teal darken-2" id="apply">Apply</a>
+            <a class="btn deep-orange lighten-2 filter" id="clear">Clear Filter</a>
+            <a class="btn deep-orange lighten-2 filter" id="apply"><strong>Apply</strong></a>
           </div>
         </div>
         <div id="filters">
@@ -115,7 +115,7 @@
               </select>
             </div>
             <div class="input-field col s12 m4">
-              <select multiple>
+              <select multiple id="material">
                 <option value="" disabled>Material:</option>
                 <option value="Wood" class="material">Wood</option>
                 <option value="Acrylic" class="material">Acrylic</option>
@@ -126,7 +126,7 @@
           </div>
           <div class="row">
             <div class="input-field col s12 m4 offset-m2">
-              <select multiple>
+              <select multiple id="kitType">
                 <option value="" disabled>Kit Type:</option>
                 <option value="Salute the troops" class="kitType">Salute the troops</option>
                 <option value="Faith, Hope, and Love" class="kitType">Faith, Hope, and Love</option>
@@ -138,7 +138,7 @@
               </select>
             </div>
             <div class="input-field col s12 m4">
-              <select multiple>
+              <select multiple id="kitColor">
                 <option value="" disabled>Kit Color:</option>
                 <option value="Antique Brass" class="kitColor">Antique Brass</option>
                 <option value="Antique" class="kitColor">Antique</option>
