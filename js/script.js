@@ -204,7 +204,7 @@ function productHtml(product, index) {
   }
   html += `
           <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</<span> - </span><span>${product.kitColor}</span></li>
-          /*<li class="collection-item"><span>Price: </span><span><strong>${product.price}</strong></span></li>*/
+          <li hidden class="collection-item"><span>Price: </span><span><strong>${product.price}</strong></span></li>
           <li class="collection-item"><span>ID: </span><span>${product.id}</span></li>
           <li hidden class="collection-item"><span>Available: </span><span>`
   if (product.available) {
