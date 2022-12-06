@@ -169,6 +169,7 @@ function productHtml(product, index) {
   <div class="card hoverable">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator card-image" src="${product.images[0]}">`
+  /*
   if (product.available) {
     html += `
       <a class="btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Still Available"><i class="material-icons white-text available">monetization_on</i></a>`
@@ -177,6 +178,7 @@ function productHtml(product, index) {
         <a class="sold btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Sold"><i class="material-icons grey-text sold">money_off</i></a>
         `
   }
+  */
   html += `
     </div >
     <div class="card-content">
@@ -202,9 +204,9 @@ function productHtml(product, index) {
   }
   html += `
           <li class="collection-item"><span>Kit Type: </span><span>${product.kitType}</<span> - </span><span>${product.kitColor}</span></li>
-          <li class="collection-item"><span>Price: </span><span><strong>${product.price}</strong></span></li>
+          /*<li class="collection-item"><span>Price: </span><span><strong>${product.price}</strong></span></li>*/
           <li class="collection-item"><span>ID: </span><span>${product.id}</span></li>
-          <li class="collection-item"><span>Available: </span><span>`
+         /* <li class="collection-item"><span>Available: </span><span>`*/
   if (product.available) {
     html += `Yes`;
   } else {
