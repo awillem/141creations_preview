@@ -169,7 +169,7 @@ function productHtml(product, index) {
   <div class="card hoverable">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator card-image" src="${product.images[0]}">`
-  
+ /* 
   if (product.available) {
     html += `
       <a hidden class="btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Still Available"><i class="material-icons white-text available">monetization_on</i></a>`
@@ -178,7 +178,7 @@ function productHtml(product, index) {
         <a hidden class="sold btn-floating halfway-fab waves-effect waves-light teal darken-2 tooltipped" data-position="right" data-tooltip="Sold"><i class="material-icons grey-text sold">money_off</i></a>
         `
   }
-  
+  */
   html += `
     </div >
     <div class="card-content">
